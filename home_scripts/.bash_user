@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#PATH=$PATH:/usr/local/bin/gcc-arm-none-eabi-4_9-2015q2/bin
+PATH=/home/nagato/bin:$PATH
+
+set -o vi
+tmux new
+
+
