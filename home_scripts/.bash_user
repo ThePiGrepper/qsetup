@@ -3,7 +3,6 @@
 #PATH=$PATH:/usr/local/bin/gcc-arm-none-eabi-4_9-2015q2/bin
 PATH=/home/nagato/bin:$PATH
 
-export EDITOR=vim
 #bsync path config
 export BSYNC_PATH=/home/nagato/work/MCU/vault
 

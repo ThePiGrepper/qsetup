@@ -1,7 +1,6 @@
 #tmux script
 
 new -s Main
-tmux a -t Main
 
 #Main session - window config
 rename-window edit
@@ -10,6 +9,7 @@ rename-window surf
 new-window
 rename-window inquire
 
+select-window -t :0
 selectp -t 0 # select the first (0) pane
 splitw -h -p 40 # split it into two halves
 selectp -t 1 # select the new, second (1) pane
