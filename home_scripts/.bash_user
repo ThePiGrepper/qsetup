@@ -1,7 +1,9 @@
 #!/bin/bash
 
 #PATH=$PATH:/usr/local/bin/gcc-arm-none-eabi-4_9-2015q2/bin
-PATH=/home/nagato/bin:$PATH
+if [ -d ${HOME}/bin ]; then
+  export PATH=${HOME}/bin:$PATH
+fi
 
 #bsync path config
 export BSYNC_PATH=/home/nagato/work/MCU/vault
