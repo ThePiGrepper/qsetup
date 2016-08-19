@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export EDITOR=vim
+export VISUAL=vim
 #PATH=$PATH:/usr/local/bin/gcc-arm-none-eabi-4_9-2015q2/bin
 if [ -d ${HOME}/bin ]; then
   export PATH=${HOME}/bin:$PATH
