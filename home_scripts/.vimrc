@@ -17,6 +17,7 @@ Plugin 'tpope/vim-surround'
 "Plugin 'FSwitch'
 Plugin 'vimwiki/vimwiki'
 Plugin 'http://github.com/sjl/gundo.vim.git'
+Plugin 'wikitopian/hardmode'
 
 "Plugin 'Valloric/YouCompleteMe'
 
@@ -88,3 +89,5 @@ inoremap <C-c> <Esc>
 autocmd FileType make setlocal noexpandtab
 
 set listchars=eol:$,tab:¦·
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
