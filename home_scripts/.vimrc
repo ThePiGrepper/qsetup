@@ -17,7 +17,8 @@ Plugin 'tpope/vim-surround'
 "Plugin 'FSwitch'
 Plugin 'vimwiki/vimwiki'
 Plugin 'http://github.com/sjl/gundo.vim.git'
-Plugin 'wikitopian/hardmode'
+Plugin 'takac/vim-hardtime'
+Plugin 'christoomey/vim-tmux-navigator'
 
 "Plugin 'Valloric/YouCompleteMe'
 
@@ -80,14 +81,12 @@ nnoremap Q <nop>
 
 "inoremap
 inoremap jk <Esc> 
-"map <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
 inoremap <C-c> <Esc>
 
 autocmd FileType make setlocal noexpandtab
 
 set listchars=eol:$,tab:¦·
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+"vim-hardtime related
+let g:hardtime_showmsg = 1
+let g:hardtime_default_on = 1
+let g:list_of_disabled_keys = ["<UP>","<DOWN>","<LEFT>","<RIGHT>","<PageUp>","<PageDown>"]
