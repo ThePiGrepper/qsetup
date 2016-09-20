@@ -88,7 +88,7 @@ inoremap <C-c> <Esc>
 
 autocmd FileType make setlocal noexpandtab
 
-set listchars=eol:$,tab:¦·
+"set listchars=eol:$,tab:¦·
 "vim-hardtime related
 let g:hardtime_showmsg = 1
 let g:hardtime_default_on = 1
