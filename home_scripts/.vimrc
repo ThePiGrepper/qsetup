@@ -19,6 +19,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'http://github.com/sjl/gundo.vim.git'
 Plugin 'takac/vim-hardtime'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 "Plugin 'Valloric/YouCompleteMe'
 

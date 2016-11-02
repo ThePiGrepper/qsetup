@@ -1,5 +1,11 @@
 #!/bin/bash
+
 srcdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+. ${srcdir}/lib.sh
+
+#handles options
+if test ! -z $1 && test "$1" == "-i"; then finstall=1; fi
+
 QSETUPDIR=$(git -C ${srcdir} rev-parse --show-toplevel)
 if test ! $? -eq 0; then
   echo "error: missing qsetup repo directory at '$(dirname ${srcdir})'.abort"
@@ -7,17 +13,25 @@ if test ! $? -eq 0; then
 fi
 
 #TODO check if its an arch-base system an checkout the arch branch.
+if test $(getDistro) == 'arch'; then
+  echo "Setup for Arch Linux"
+  if test ! -z $finstall && test -f ${srcdir}/pacman-pkgs ; then
+    echo "Installing Packages..."
+    sudo pacman -S $(< ${srcdir}/pacman-pkgs ) --needed
+  fi
+else
+  echo "No distro-specific setup"
+fi
 
 #Check if all the tools are installed
-which vim > /dev/null 2>&1
-if test $? -ne 0; echo "install vim.abort"; exit 1; fi
-which tmux > /dev/null 2>&1
-if test $? -ne 0; echo "install tmux.abort"; exit 1; fi
-which git > /dev/null 2>&1
-if test $? -ne 0; echo "install git.abort"; exit 1; fi
+if test $(isInstalled vim) -eq 0 ; then echo "install vim.abort"; exit 1; fi
+if test $(isInstalled tmux) -eq 0 ; then echo "install tmux.abort"; exit 1; fi
+#check tmux dependencies
+. ${srcdir}/tmux_depCheck.sh
+if test $(isInstalled git) -eq 0 ; then echo "install git.abort"; exit 1; fi
 
 #create symbolic links to dot script at home.
-cd - #going home
+cd ~ #going home
 ln -sf ${QSETUPDIR}/home_scripts/.bash_aliases .
 ln -sf ${QSETUPDIR}/home_scripts/.bash_logout .
 ln -sf ${QSETUPDIR}/home_scripts/.bash_user .
