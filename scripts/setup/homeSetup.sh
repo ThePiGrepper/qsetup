@@ -2,7 +2,7 @@
 srcdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 QSETUPDIR=$(git -C ${srcdir} rev-parse --show-toplevel)
 if test ! $? -eq 0; then
-  echo "error: missing qsetup repo directory at '$(dirname ${QSETUPDIR})'.abort"
+  echo "error: missing qsetup repo directory at '$(dirname ${srcdir})'.abort"
   exit 1
 fi
 
