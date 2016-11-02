@@ -8,10 +8,16 @@
 #-1:error
 getDistro(){
   #test arch
-  cat /etc/*-release | grep -q 'ID=arch'
+  cat /etc/os-release | grep -q 'ID=arch'
   if test $? -eq 0; then
     echo "arch"
     return 1
+  fi
+  #test debian-based
+  cat /etc/os-release | grep -q 'ID_LIKE=debian'
+  if test $? -eq 0; then
+    echo "debian"
+    return 2
   fi
   #add other distro tests here
   return -1

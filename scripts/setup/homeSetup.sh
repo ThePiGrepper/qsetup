@@ -12,7 +12,7 @@ if test ! $? -eq 0; then
   exit 1
 fi
 
-#TODO check if its an arch-base system an checkout the arch branch.
+#Install step (optional)
 if test $(getDistro) == 'arch'; then
   echo "Setup for Arch Linux"
   if test ! -z $finstall && test -f ${srcdir}/pacman-pkgs ; then
@@ -20,7 +20,15 @@ if test $(getDistro) == 'arch'; then
     sudo pacman -S $(< ${srcdir}/pacman-pkgs ) --needed
   fi
 else
-  echo "No distro-specific setup"
+  if test $(getDistro) == 'debian'; then
+    echo "Setup for Debian-based Distros"
+    if test ! -z $finstall && test -f ${srcdir}/apt-pkgs ; then
+      echo "Installing Packages..."
+      xargs -a <(awk '/^\s*[^#]/' ${srcdir}/apt-pkgs ) -r -- sudo apt-get install
+    fi
+  else
+    echo "No distro-specific setup"
+  fi
 fi
 
 #Check if all the tools are installed
