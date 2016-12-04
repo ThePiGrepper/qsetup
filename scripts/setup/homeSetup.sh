@@ -17,7 +17,7 @@ if test $(getDistro) == 'arch'; then
   echo "Setup for Arch Linux"
   if test ! -z $finstall && test -f ${srcdir}/pacman-pkgs ; then
     echo "Installing Packages..."
-    sudo pacman -S $(< ${srcdir}/pacman-pkgs ) --needed
+    sudo pacman -S $(sed -n '/^#/!p' ${srcdir}/pacman-pkgs ) --needed
   fi
 else
   if test $(getDistro) == 'debian'; then
