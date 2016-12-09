@@ -12,6 +12,11 @@ if test ! $? -eq 0; then
   exit 1
 fi
 
+#Check if all the tools are installed(tools needed to run this script!!)
+if test $(isInstalled grep) -eq 0 ; then echo "install grep.abort"; exit 1; fi
+if test $(isInstalled awk) -eq 0 ; then echo "install awk.abort"; exit 1; fi
+if test $(isInstalled sed) -eq 0 ; then echo "install sed.abort"; exit 1; fi
+if test $(isInstalled xargs) -eq 0 ; then echo "install xargs.abort"; exit 1; fi
 #Install step (optional)
 if test $(getDistro) == 'arch'; then
   echo "Setup for Arch Linux"
