@@ -3,13 +3,46 @@
 base-devel
 #command line
 bash-completion
+tree
+htop
+i7z
+gparted
+ntfs-3g
+downgrade
+#fonts
+ttf-droid
+ttf-liberation
+ttf-dejavu
 #devel utils
 cloc
 vim
-tmux
+arm-none-eabi-gcc
+arm-none-eabi-gdb
+arm-none-eabi-newlib
+openocd
+ninja
+lilyterm
 #xclip,tmux workflow dependency
+tmux
 xclip
 git
 #fun utils
 screenfetch
 cmatrix
+#other programs
+#firefox
+#clementine
+#gst-plugins-base
+#gst-plugins-ugly
+#alsa-utils
+#pulseaudio-alsa
+#pulseaudio-bluetooth
+#pavucontrol
+#bluez
+#bluez-utils
+#bluez-firmware
+#bluez-libs
+#blueberry
+#gstreamer
+#gnome-screenshot
+#xfce4-power-manager
