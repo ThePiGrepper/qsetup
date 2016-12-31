@@ -13,6 +13,12 @@ getDistro(){
     echo "arch"
     return 1
   fi
+  #manjaro
+  cat /etc/os-release | grep -q 'ID=manjaro'
+  if test $? -eq 0; then
+    echo "arch"
+    return 1
+  fi
   #test debian-based
   cat /etc/os-release | grep -q 'ID_LIKE=debian'
   if test $? -eq 0; then

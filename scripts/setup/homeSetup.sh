@@ -18,14 +18,14 @@ if test $(isInstalled awk) -eq 0 ; then echo "install awk.abort"; exit 1; fi
 if test $(isInstalled sed) -eq 0 ; then echo "install sed.abort"; exit 1; fi
 if test $(isInstalled xargs) -eq 0 ; then echo "install xargs.abort"; exit 1; fi
 #Install step (optional)
-if test $(getDistro) == 'arch'; then
+if test "$(getDistro)" == 'arch'; then
   echo "Setup for Arch Linux"
   if test ! -z $finstall && test -f ${srcdir}/pacman-pkgs ; then
     echo "Installing Packages..."
     sudo pacman -S $(sed -n '/^#/!p' ${srcdir}/pacman-pkgs ) --needed
   fi
 else
-  if test $(getDistro) == 'debian'; then
+  if test "$(getDistro)" == 'debian'; then
     echo "Setup for Debian-based Distros"
     if test ! -z $finstall && test -f ${srcdir}/apt-pkgs ; then
       echo "Installing Packages..."
