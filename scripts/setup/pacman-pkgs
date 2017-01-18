@@ -6,9 +6,13 @@ bash-completion
 tree
 htop
 i7z
+u#nrar
+unzip
 gparted
 ntfs-3g
 downgrade
+net-tools
+wget
 #fonts
 ttf-droid
 ttf-liberation
@@ -30,7 +34,9 @@ git
 #fun utils
 screenfetch
 cmatrix
+#cowsay
 #other programs
+#openssh
 #firefox
 #clementine
 #gst-plugins-base
