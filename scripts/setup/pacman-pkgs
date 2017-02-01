@@ -5,21 +5,26 @@ base-devel
 bash-completion
 tree
 htop
-i7z
-u#nrar
+#i7z
+file-roller
+unrar
+zip
 unzip
 gparted
 ntfs-3g
 downgrade
+rsync
 net-tools
+openssh
 wget
 #fonts
 ttf-droid
 ttf-liberation
 ttf-dejavu
 #devel utils
-cloc
 vim
+cloc
+ctags
 arm-none-eabi-gcc
 arm-none-eabi-gdb
 arm-none-eabi-newlib
@@ -31,25 +36,30 @@ lilyterm
 tmux
 xclip
 git
+#qalc command + GUI
+qalculate-gtk
 #fun utils
 screenfetch
 cmatrix
 #cowsay
-#other programs
-#openssh
+#nice gui apps
 #firefox
 #clementine
+#simplescreenrecorder
+#guvcview
+#pinta
+#gnome-screenshot
+#xfce4-power-manager
+#pavucontrol
+#Other programs
 #gst-plugins-base
 #gst-plugins-ugly
 #alsa-utils
 #pulseaudio-alsa
 #pulseaudio-bluetooth
-#pavucontrol
 #bluez
 #bluez-utils
 #bluez-firmware
 #bluez-libs
 #blueberry
 #gstreamer
-#gnome-screenshot
-#xfce4-power-manager
