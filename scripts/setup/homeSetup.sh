@@ -7,6 +7,7 @@ srcdir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 if test ! -z $1 && test "$1" == "-i"; then finstall=1; fi
 
 QSETUPDIR=$(git -C ${srcdir} rev-parse --show-toplevel)
+QSETUP_SCRIPTDIR=${QSETUPDIR}/home_scripts
 if test ! $? -eq 0; then
   echo "error: missing qsetup repo directory at '$(dirname ${srcdir})'.abort"
   exit 1
@@ -45,13 +46,16 @@ if test $(isInstalled git) -eq 0 ; then echo "install git.abort"; exit 1; fi
 
 #create symbolic links to dot script at home.
 cd ~ #going home
-ln -sf ${QSETUPDIR}/home_scripts/.bash_aliases .
-ln -sf ${QSETUPDIR}/home_scripts/.bash_logout .
-ln -sf ${QSETUPDIR}/home_scripts/.bash_user .
-ln -sf ${QSETUPDIR}/home_scripts/.bashrc .
-ln -sf ${QSETUPDIR}/home_scripts/.profile .
-ln -sf ${QSETUPDIR}/home_scripts/.tmux.conf .
-ln -sf ${QSETUPDIR}/home_scripts/.vimrc .
+ln -sf ${QSETUP_SCRIPTDIR}/.bash_aliases .
+ln -sf ${QSETUP_SCRIPTDIR}/.bash_logout .
+ln -sf ${QSETUP_SCRIPTDIR}/.bash_user .
+ln -sf ${QSETUP_SCRIPTDIR}/.bashrc .
+ln -sf ${QSETUP_SCRIPTDIR}/.profile .
+ln -sf ${QSETUP_SCRIPTDIR}/.tmux.conf .
+ln -sf ${QSETUP_SCRIPTDIR}/.vimrc .
+
+sed -i --follow-symlinks "s#QSETUP_PATH=#QSETUP_PATH=${QSETUPDIR}#" .bash_user
+sed -i --follow-symlinks "s#QSETUP_SCRIPT_PATH=#QSETUP_SCRIPT_PATH=${QSETUP_SCRIPTDIR}#" .bash_user
 
 #setup for vim
 mkdir -p ~/.vim/bundle
