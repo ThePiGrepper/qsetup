@@ -8,7 +8,9 @@ if [ -d ${HOME}/bin ]; then
 fi
 
 #bsync path config
-export BSYNC_PATH=/home/nagato/work/MCU/vault
+export QSETUP_PATH=
+export QSETUP_DOTFILE_PATH=
+export BSYNC_PATH=/home/${USER}/work/MCU/vault
 
 set -o vi
 #tmux new
