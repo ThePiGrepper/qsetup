@@ -14,3 +14,5 @@ export BSYNC_PATH=/home/${USER}/work/MCU/vault
 
 set -o vi
 #tmux new
+#disable (N times only) Ctrl-D close terminal shortcut.
+export IGNOREEOF=10
