@@ -65,6 +65,7 @@ set textwidth=0
 " make "tab" insert indents instead of tabs at the beginning of a line
 "set smarttab
 
+colorscheme desert
 "undo config
 set undofile
 set undodir=$HOME/.vim/undo
