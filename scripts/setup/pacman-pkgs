@@ -38,6 +38,9 @@ xclip
 git
 #qalc command + GUI
 qalculate-gtk
+#pdf reader
+zathura
+zathura-pdf-mupdf
 #fun utils
 screenfetch
 cmatrix

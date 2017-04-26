@@ -1,4 +1,4 @@
-alias pdfview='evince'
+alias pdfview='zathura'
 #git
 alias gitl='git log --oneline --decorate --graph --all'
 
