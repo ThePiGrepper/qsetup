@@ -54,8 +54,8 @@ ln -sf ${QSETUP_DOTFILEDIR}/.profile .
 ln -sf ${QSETUP_DOTFILEDIR}/.tmux.conf .
 ln -sf ${QSETUP_DOTFILEDIR}/.vimrc .
 
-sed -i --follow-symlinks "s#QSETUP_PATH=#QSETUP_PATH=${QSETUPDIR}#" .bash_user
-sed -i --follow-symlinks "s#QSETUP_DOTFILE_PATH=#QSETUP_DOTFILE_PATH=${QSETUP_DOTFILEDIR}#" .bash_user
+sed -i --follow-symlinks "s#QSETUP_PATH=.*#QSETUP_PATH=${QSETUPDIR}#" .bash_user
+sed -i --follow-symlinks "s#QSETUP_DOTFILE_PATH=.*#QSETUP_DOTFILE_PATH=${QSETUP_DOTFILEDIR}#" .bash_user
 
 #setup for vim
 mkdir -p ~/.vim/bundle
