@@ -25,16 +25,20 @@ if test "$(getDistro)" == 'arch'; then
     echo "Installing Packages..."
     sudo pacman -S $(sed -n '/^#/!p' ${srcdir}/pacman-pkgs ) --needed
   fi
-else
-  if test "$(getDistro)" == 'debian'; then
-    echo "Setup for Debian-based Distros"
-    if test ! -z $finstall && test -f ${srcdir}/apt-pkgs ; then
-      echo "Installing Packages..."
-      xargs -a <(awk '/^\s*[^#]/' ${srcdir}/apt-pkgs ) -r -- sudo apt-get install
-    fi
-  else
-    echo "No distro-specific setup"
+elif test "$(getDistro)" == 'void'; then
+  echo "Setup for Void Linux"
+  if test ! -z $finstall && test -f ${srcdir}/xbps-pkgs ; then
+    echo "Installing Packages..."
+    sudo xbps-install -Sv $(sed -n '/^#/!p' ${srcdir}/xbps-pkgs )
   fi
+elif test "$(getDistro)" == 'debian'; then
+  echo "Setup for Debian-based Distros"
+  if test ! -z $finstall && test -f ${srcdir}/apt-pkgs ; then
+    echo "Installing Packages..."
+    xargs -a <(awk '/^\s*[^#]/' ${srcdir}/apt-pkgs ) -r -- sudo apt-get install
+  fi
+else
+  echo "No distro-specific setup"
 fi
 
 #Check if all the tools are installed

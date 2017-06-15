@@ -1,0 +1,66 @@
+#now supporting comments (lines needs to start with #)
+#needed for this script later on
+base-devel
+#command line
+bash-completion
+tree
+htop
+#i7z
+file-roller
+#unrar
+zip
+unzip
+gparted
+ntfs-3g
+#downgrade
+rsync
+net-tools
+openssh
+wget
+#fonts
+#ttf-droid
+#ttf-liberation
+#ttf-dejavu
+#devel utils
+vim
+cloc
+ctags
+#arm-none-eabi-gcc
+#arm-none-eabi-gdb
+#arm-none-eabi-newlib
+#arm-none-eabi-binutils
+openocd
+ninja
+lilyterm
+#xclip,tmux workflow dependency
+tmux
+xclip
+git
+#qalc command + GUI
+qalculate-gtk
+#fun utils
+#screenfetch
+cmatrix
+
+cowsay
+#nice gui apps
+#firefox
+clementine
+#simplescreenrecorder
+guvcview
+#pinta
+gnome-screenshot
+xfce4-power-manager
+pavucontrol
+#Other programs
+gst-plugins-base
+gst-plugins-ugly
+alsa-utils
+#pulseaudio-alsa
+#pulseaudio-bluetooth
+bluez
+#bluez-utils
+#bluez-firmware
+#bluez-libs
+#blueberry
+gstreamer

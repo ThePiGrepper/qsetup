@@ -25,6 +25,12 @@ getDistro(){
     echo "debian"
     return 2
   fi
+  #Void Linux
+  cat /etc/os-release | grep -q 'ID="void"'
+  if test $? -eq 0; then
+    echo "void"
+    return 3
+  fi
   #add other distro tests here
   return -1
 }
