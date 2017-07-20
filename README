@@ -1,0 +1,11 @@
+#Qsetup is a group of dot files for my personal config
+#It also comes with some additional scripts for easy installation
+
+#[TODO]
+- write an independent script for package installation.
+- add an optional parameter for adding custom <pkg-list> file.
+ie: $./home_setup -i <pkg-list>
+- add more intelligence to installation script:
+  - add new parsing capabilities to the script so it detects:
+    - package groups //you can create custom groups of packages to partially install the contents of a pkg-list.
+    ie: ./home_setup -i [<pkg-list>] --groups <group1> <group2> <group3>
