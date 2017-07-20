@@ -9,3 +9,8 @@ ie: $./home_setup -i <pkg-list>
   - add new parsing capabilities to the script so it detects:
     - package groups //you can create custom groups of packages to partially install the contents of a pkg-list.
     ie: ./home_setup -i [<pkg-list>] --groups <group1> <group2> <group3>
+- load different tmux status bar configs.
+  - this would be useful for cli-only interfaces where all relevant system info must be enabled in the console.
+    ie: network information(SSID,intensity),current volume level,usb devices detected.
+- add 'IDE mode' for tmux.
+  - enable shortcuts to move 'slide' panes to the sides. Style it so that it makes easier to work on applications on tmux.
