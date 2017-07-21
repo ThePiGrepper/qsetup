@@ -14,3 +14,9 @@ ie: $./home_setup -i <pkg-list>
     ie: network information(SSID,intensity),current volume level,usb devices detected.
 - add 'IDE mode' for tmux.
   - enable shortcuts to move 'slide' panes to the sides. Style it so that it makes easier to work on applications on tmux.
+- add clementine support on tmuxMusicBar.
+	- if more than one music player are playing, display only the default one(Cmus).
+	- to send actions to clementine on the CLI, just use clementine command.
+	- to get status data(track playing,etc) use the following: qdbus-qt4
+		qdbus-qt4 org.mpris.clementine /Player org.freedesktop.MediaPlayer.GetMetadata | grep title: |cut -d' ' -f2- //get current track title
+	- Reference: https://github.com/clementine-player/Clementine/wiki/Controlling-Clementine-from-the-commandline-with-DBus-and-MPRIS
