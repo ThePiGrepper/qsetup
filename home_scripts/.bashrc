@@ -19,6 +19,7 @@ shopt -s histappend
 HISTSIZE=4000
 HISTFILESIZE=50000
 HISTTIMEFORMAT="%d/%m %H:%M "
+HISTIGNORE="clear:exit:fg:tmux:htop:pwd:reboot:history:shutdown:gitl:ls:ll:cd"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
