@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=4000
-HISTFILESIZE=50000
+HISTSIZE=5000
+HISTFILESIZE=70000
 HISTTIMEFORMAT="%d/%m %H:%M "
 HISTIGNORE="clear:exit:fg:tmux:htop:pwd:reboot:history:shutdown:gitl:ls:ll:cd"
 
